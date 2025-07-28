@@ -2,11 +2,11 @@
  * This class was created by <Vazkii>. It's distributed as
  * part of the Botania Mod. Get the Source Code in github:
  * https://github.com/Vazkii/Botania
- *
+ * <p>
  * Botania is Open Source and distributed under a
  * Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License
  * (http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_GB)
- *
+ * <p>
  * File Created @ [Oct 18, 2014, 4:00:30 PM (GMT)]
  */
 package pixlepix.auracascade.lexicon.button;
@@ -39,6 +39,10 @@ public class GuiButtonCategory extends GuiButtonLexicon {
         this.category = category;
     }
 
+    public static ResourceLocation getFallbackresource() {
+        return fallbackResource;
+    }
+
     @Override
     public void drawButton(Minecraft mc, int mx, int my) {
         boolean inside = mx >= xPosition && my >= yPosition && mx < xPosition + width && my < yPosition + height;
@@ -55,7 +59,7 @@ public class GuiButtonCategory extends GuiButtonLexicon {
         else resource = category.getIcon();
         if (resource == null)
             resource = fallbackResource;
-            
+
 
         mc.renderEngine.bindTexture(resource);
         */
@@ -94,9 +98,5 @@ public class GuiButtonCategory extends GuiButtonLexicon {
     public LexiconCategory getCategory() {
         return category;
     }
-
-	public static ResourceLocation getFallbackresource() {
-		return fallbackResource;
-	}
 
 }

@@ -81,7 +81,7 @@ public class ItemAngelsteelShovel extends ItemSpade implements ITTinkererItem, I
     }
 
 
-	@Override
+    @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List<String> list, boolean p_77624_4_) {
         super.addInformation(stack, player, list, p_77624_4_);
 

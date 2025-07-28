@@ -2,11 +2,11 @@
  * This class was created by <Vazkii>. It's distributed as
  * part of the Botania Mod. Get the Source Code in github:
  * https://github.com/Vazkii/Botania
- *
+ * <p>
  * Botania is Open Source and distributed under a
  * Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License
  * (http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_GB)
- *
+ * <p>
  * File Created @ [Jan 14, 2014, 9:12:15 PM (GMT)]
  */
 package pixlepix.auracascade.lexicon;
@@ -47,7 +47,7 @@ public final class LexiconData {
         LexiconCategory categoryQuest = null;
         //TODO bring this back
         //if (Config.questline)
-        if(false){
+        if (false) {
             categoryQuest = CategoryManager.categoryQuest = new LexiconCategory("Quests").setIcon(new ItemStack(Items.DIAMOND_SWORD));
             CategoryManager.addCategory(categoryQuest);
         }
@@ -86,7 +86,7 @@ public final class LexiconData {
         new BLexiconEntry("tutorial", categoryWalkthrough).setPriority().setLexiconPages(new PageTutorial("0"));
         new BLexiconEntry("basics", categoryBasics).setPriority().setLexiconPages(new PageText("0"), new PageText("1")).tutorial();
         new BLexiconEntry("auraFlow", categoryBasics).setLexiconPages(new PageText("0"), new PageText("1"),
-                new PageCraftingRecipe("2", (OreCraftingBenchRecipe)BlockRegistry.getRecipe(itemAuraCrystal)),
+                new PageCraftingRecipe("2", (OreCraftingBenchRecipe) BlockRegistry.getRecipe(itemAuraCrystal)),
                 new PageCraftingRecipe("3", (CraftingBenchRecipe) BlockRegistry.getRecipe(AuraBlock.getBlockFromName("")))).tutorial();
         new BLexiconEntry("power", categoryBasics).setLexiconPages(new PageText("0"), new PageText("1")).setPriority().tutorial();
         new BLexiconEntry("pumps", categoryBasics).setLexiconPages(new PageText("0"), new PageText("1"), new PageText("2"),

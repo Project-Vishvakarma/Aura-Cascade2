@@ -90,7 +90,7 @@ public class AuraUtil {
         return entity.posX + "|" + entity.posY + "|" + entity.posZ;
 
     }
-    
+
 
     public static void updateMonitor(World w, BlockPos pos) {
         for (EnumFacing d1 : EnumFacing.VALUES) {

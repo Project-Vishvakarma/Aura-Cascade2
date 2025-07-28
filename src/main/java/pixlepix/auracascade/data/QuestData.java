@@ -12,8 +12,8 @@ import java.util.ArrayList;
 /**
  * Created by localmacaccount on 5/31/15.
  */
-public class QuestData implements Capability.IStorage<QuestData>{
-	//TODO Fix QuestData
+public class QuestData implements Capability.IStorage<QuestData> {
+    //TODO Fix QuestData
 
     public final static String EXT_PROP_NAME = "ACQuest";
     public ArrayList<Quest> completedQuests = new ArrayList<Quest>();
@@ -27,8 +27,8 @@ public class QuestData implements Capability.IStorage<QuestData>{
     }
 
     public static void register(EntityPlayer player) {
-       // player.registerExtendedProperties(QuestData.EXT_PROP_NAME, new QuestData());
-     //   player.capabilities.writeCapabilitiesToNBT(tagCompound);
+        // player.registerExtendedProperties(QuestData.EXT_PROP_NAME, new QuestData());
+        //   player.capabilities.writeCapabilitiesToNBT(tagCompound);
     }
 
     /**
@@ -66,6 +66,7 @@ public class QuestData implements Capability.IStorage<QuestData>{
         }
     }
     */
+
     /**
      * Used to initialize the extended properties with the entity that this is attached to, as well
      * as the world object.
@@ -76,18 +77,18 @@ public class QuestData implements Capability.IStorage<QuestData>{
      * @param entity The entity that this extended properties is attached to
      * @param world  The world in which the entity exists
      */
-    
+
     public void init(Entity entity, World world) {
 
     }
 
-	@Override
-	public NBTBase writeNBT(Capability<QuestData> capability, QuestData instance, EnumFacing side) {
-		return null;
-	}
+    @Override
+    public NBTBase writeNBT(Capability<QuestData> capability, QuestData instance, EnumFacing side) {
+        return null;
+    }
 
-	@Override
-	public void readNBT(Capability<QuestData> capability, QuestData instance, EnumFacing side, NBTBase nbt) {
-		
-	}
+    @Override
+    public void readNBT(Capability<QuestData> capability, QuestData instance, EnumFacing side, NBTBase nbt) {
+
+    }
 }

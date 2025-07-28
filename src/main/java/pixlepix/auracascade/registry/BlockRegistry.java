@@ -20,10 +20,10 @@ import java.util.*;
 public class BlockRegistry {
 
     public static HashMap<ITTinkererRegisterable, ThaumicTinkererRecipe> recipeMap = new HashMap<ITTinkererRegisterable, ThaumicTinkererRecipe>();
-	private static HashMap<Class, ArrayList<Item>> itemRegistry = new HashMap<Class, ArrayList<Item>>();
-	private static HashMap<Class, ArrayList<Block>> blockRegistry = new HashMap<Class, ArrayList<Block>>();
-	private ArrayList<Class> itemClasses = new ArrayList<Class>();
-	private ArrayList<Class> blockClasses = new ArrayList<Class>();
+    private static HashMap<Class, ArrayList<Item>> itemRegistry = new HashMap<Class, ArrayList<Item>>();
+    private static HashMap<Class, ArrayList<Block>> blockRegistry = new HashMap<Class, ArrayList<Block>>();
+    private ArrayList<Class> itemClasses = new ArrayList<Class>();
+    private ArrayList<Class> blockClasses = new ArrayList<Class>();
 
     public static Set<Item> getAllItems() {
         Set<Item> ret = Sets.newHashSet();
@@ -146,7 +146,8 @@ public class BlockRegistry {
 
                     }
                 }
-            } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+            } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
+                     NoSuchMethodException e) {
                 e.printStackTrace();
             }
         }
@@ -171,19 +172,19 @@ public class BlockRegistry {
                     }
                     itemRegistry.put(clazz, itemList);
                 }
-            } catch (InstantiationException | IllegalAccessException  | InvocationTargetException e) {
+            } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
                 e.printStackTrace();
             }
         }
         for (ArrayList<Block> blockArrayList : blockRegistry.values()) {
             for (Block block : blockArrayList) {
                 if (((ITTinkererBlock) block).getItemBlock() != null) {
-                	//TODO these may break
+                    //TODO these may break
                     GameRegistry.registerBlock(block, ((ITTinkererBlock) block).getItemBlock(), ((ITTinkererBlock) block).getBlockName());
                     //ForgeRegistries.BLOCKS.register(block);
                 } else {
                     GameRegistry.registerBlock(block, ((ITTinkererBlock) block).getBlockName());
-                   // ForgeRegistries.BLOCKS.register(block);
+                    // ForgeRegistries.BLOCKS.register(block);
                     //ForgeRegistries.BLOCKS.re
                 }
                 if (((ITTinkererBlock) block).getTileEntity() != null) {
@@ -203,7 +204,7 @@ public class BlockRegistry {
         for (ArrayList<Item> itemArrayList : itemRegistry.values()) {
             for (Item item : itemArrayList) {
                 if (!(item instanceof ItemBlock)) {
-                	//TODO this may have broken.
+                    //TODO this may have broken.
                     GameRegistry.registerItem(item, ((ITTinkererItem) item).getItemName());
                     //ForgeRegistries.ITEMS.register(item);
                     if (((ITTinkererItem) item).shouldDisplayInTab() && FMLCommonHandler.instance().getSide() == Side.CLIENT) {

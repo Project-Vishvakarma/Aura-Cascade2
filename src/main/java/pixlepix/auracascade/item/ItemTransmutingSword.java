@@ -60,7 +60,8 @@ public class ItemTransmutingSword extends Item implements ITTinkererItem {
             try {
                 newEntity = clazz.getConstructor(World.class).newInstance(target.worldObj);
                 newEntity.setPosition(target.posX, target.posY, target.posZ);
-            } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+            } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
+                     NoSuchMethodException e) {
                 e.printStackTrace();
             }
 

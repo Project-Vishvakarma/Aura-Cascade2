@@ -39,7 +39,8 @@ public class SpawnTile extends ConsumerTile {
             entity.setPosition(pos.getX() + .5, pos.getY() + 2, pos.getZ() + .5);
             worldObj.spawnEntityInWorld(entity);
             //TODO 1.8.8 entity.onSpawnWithEgg(null);
-        } catch (InstantiationException | IllegalAccessException | NoSuchMethodException  | InvocationTargetException e) {
+        } catch (InstantiationException | IllegalAccessException | NoSuchMethodException |
+                 InvocationTargetException e) {
             e.printStackTrace();
         }
 

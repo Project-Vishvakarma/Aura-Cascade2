@@ -31,7 +31,7 @@ public class ItemFairyCharm extends Item implements ITTinkererItem {
 
     public static final String name = "fairyCharm";
     @SuppressWarnings("rawtypes")
-	public static Class[] fairyClasses = new Class[]{EntityFairy.class, EntityCombatFairy.class, EntityDebuffFairy.class, EntityBuffFairy.class,
+    public static Class[] fairyClasses = new Class[]{EntityFairy.class, EntityCombatFairy.class, EntityDebuffFairy.class, EntityBuffFairy.class,
             EntityStealFairy.class, EntityPushFairy.class, EntityShooterFairy.class, EntitySaviorFairy.class, EntityFetchFairy.class
             , EntityBaitFairy.class, EntityBreederFairy.class, EntityScareFairy.class, EntityExtinguisherFairy.class, EntityDigFairy.class,
             EntityFallFairy.class, EntityLightFairy.class, EntityXPFairy.class
@@ -95,7 +95,7 @@ public class ItemFairyCharm extends Item implements ITTinkererItem {
     }
 
     @Override
-    public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand){
+    public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
         if (!world.isRemote) {
             ItemStack ringStack = EventHandler.getBaubleFromInv(ItemFairyRing.class, player);
             if (ringStack != null) {
@@ -117,7 +117,7 @@ public class ItemFairyCharm extends Item implements ITTinkererItem {
 
                     consumeInventoryItem(player.inventory, this, stack.getItemDamage());
 
-                  //  AuraCascade.analytics.eventDesign("fairyAdded", fairyClasses[stack.getItemDamage()].getName());
+                    //  AuraCascade.analytics.eventDesign("fairyAdded", fairyClasses[stack.getItemDamage()].getName());
                 }
             }
         }
@@ -146,7 +146,7 @@ public class ItemFairyCharm extends Item implements ITTinkererItem {
     }
 
     @SuppressWarnings("unchecked")
-	@Override
+    @Override
     public String getItemStackDisplayName(ItemStack stack) {
         if (stack.getItemDamage() >= fairyClasses.length) {
             return "invalid";

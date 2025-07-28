@@ -85,14 +85,14 @@ public class CraftingCenterTile extends TileEntity {
             //AuraCascade.analytics.eventDesign("vortexCraft", loot.getUnlocalizedName());
             EntityItem entityDrop = new EntityItem(worldObj, getPos().getX() + .5, getPos().getY() + 2, getPos().getZ() + .5, loot);
             worldObj.spawnEntityInWorld(entityDrop);
-            AuraCascade.proxy.networkWrapper.sendToAllAround(new PacketBurst(3, getPos().getX() + .5, getPos().getY() + 2, getPos().getZ() + .5), new NetworkRegistry.TargetPoint(worldObj.provider.getDimension(), getPos().getX(),getPos().getY(), getPos().getZ(), 32));
+            AuraCascade.proxy.networkWrapper.sendToAllAround(new PacketBurst(3, getPos().getX() + .5, getPos().getY() + 2, getPos().getZ() + .5), new NetworkRegistry.TargetPoint(worldObj.provider.getDimension(), getPos().getX(), getPos().getY(), getPos().getZ(), 32));
 
         }
     }
 
     public void burst(BlockPos origin, BlockPos target, String particle) {
 
-        AuraCascade.proxy.networkWrapper.sendToAllAround(new PacketBurst(origin, target, particle, 1, 1, 1), new NetworkRegistry.TargetPoint(worldObj.provider.getDimension(), getPos().getX(),getPos().getY(), getPos().getZ(), 32));
+        AuraCascade.proxy.networkWrapper.sendToAllAround(new PacketBurst(origin, target, particle, 1, 1, 1), new NetworkRegistry.TargetPoint(worldObj.provider.getDimension(), getPos().getX(), getPos().getY(), getPos().getZ(), 32));
 
     }
 

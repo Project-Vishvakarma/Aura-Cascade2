@@ -10,13 +10,14 @@ import pixlepix.auracascade.data.EnumRainbowColor;
  * Created by localmacaccount on 2/14/15.
  */
 public class KaleidoscopeEnchantment extends Enchantment {
-	private static EntityEquipmentSlot[] slots = new EntityEquipmentSlot[]{
-			EntityEquipmentSlot.CHEST
-	};
+    private static EntityEquipmentSlot[] slots = new EntityEquipmentSlot[]{
+            EntityEquipmentSlot.CHEST
+    };
+
     public KaleidoscopeEnchantment(EnumRainbowColor aura) {
         //super(id, new ResourceLocation(ConstantMod.prefixMod, "kaleidoscope"), 0, EnumEnchantmentType.ALL);
-    	
-    	super(Enchantment.Rarity.RARE, EnumEnchantmentType.ALL, slots);
+
+        super(Enchantment.Rarity.RARE, EnumEnchantmentType.ALL, slots);
         setName(aura.name);
     }
 

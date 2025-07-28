@@ -51,9 +51,9 @@ public class EnchanterTile extends ConsumerTile {
     }
 
     @SuppressWarnings("unchecked")
-	@Override
+    @Override
     public void onUsePower() {
-       // AuraCascade.analytics.eventDesign("consumerEnchant", AuraUtil.formatLocation(this));
+        // AuraCascade.analytics.eventDesign("consumerEnchant", AuraUtil.formatLocation(this));
         ArrayList<EntityItem> items = (ArrayList<EntityItem>) worldObj.getEntitiesWithinAABB(EntityItem.class, PosUtil.getBoundingBox(getPos(), 3));
         for (EntityItem item : items) {
             ItemStack toolStack = item.getEntityItem();
@@ -69,7 +69,7 @@ public class EnchanterTile extends ConsumerTile {
                             int level = EnchantmentHelper.getEnchantmentLevel(enchant, toolStack);
                             if (isSuccessful(toolStack)) {
                                 @SuppressWarnings("rawtypes")
-								Map enchantMap = EnchantmentHelper.getEnchantments(toolStack);
+                                Map enchantMap = EnchantmentHelper.getEnchantments(toolStack);
                                 enchantMap.put(Enchantment.getEnchantmentID(enchant), level + 1);
                                 EnchantmentHelper.setEnchantments(enchantMap, toolStack);
                             }
@@ -89,7 +89,7 @@ public class EnchanterTile extends ConsumerTile {
     }
 
     public int getTotalLevel(ItemStack stack) {
-    	//TODO Enchant System, fix.
+        //TODO Enchant System, fix.
         return EnchantmentHelper.getEnchantmentLevel(EnchantmentManager.red, stack)
                 + EnchantmentHelper.getEnchantmentLevel(EnchantmentManager.orange, stack)
                 + EnchantmentHelper.getEnchantmentLevel(EnchantmentManager.yellow, stack)
@@ -106,6 +106,7 @@ public class EnchanterTile extends ConsumerTile {
                 , EnchantmentHelper.getEnchantmentLevel(EnchantmentManager.blue, stack)
                 , EnchantmentHelper.getEnchantmentLevel(EnchantmentManager.purple, stack)});
     }
+
     public double getSuccessRate(ItemStack stack) {
         int totalLevel = getTotalLevel(stack);
         return Math.pow(.75, totalLevel) * Math.pow(.25, Math.max(0, getMaxLevel(stack) - 4));
@@ -117,7 +118,7 @@ public class EnchanterTile extends ConsumerTile {
     }
 
     @SuppressWarnings("incomplete-switch")
-	public Enchantment getEnchantFromAura(EnumRainbowColor aura) {
+    public Enchantment getEnchantFromAura(EnumRainbowColor aura) {
         switch (aura) {
             case RED:
                 return EnchantmentManager.red;

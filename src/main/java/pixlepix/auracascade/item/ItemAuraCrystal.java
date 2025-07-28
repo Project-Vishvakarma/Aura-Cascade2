@@ -26,7 +26,7 @@ public class ItemAuraCrystal extends Item implements ITTinkererItem {
     public static final String name = "whiteCrystal";
 
     @Override
-    public EnumActionResult onItemUseFirst(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ, EnumHand hand){
+    public EnumActionResult onItemUseFirst(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ, EnumHand hand) {
         TileEntity te = world.getTileEntity(pos);
         if (te instanceof AuraTile) {
             stack.stackSize--;

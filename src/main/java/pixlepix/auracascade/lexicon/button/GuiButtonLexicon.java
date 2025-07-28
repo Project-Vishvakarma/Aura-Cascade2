@@ -2,11 +2,11 @@
  * This class was created by <Vazkii>. It's distributed as
  * part of the Botania Mod. Get the Source Code in github:
  * https://github.com/Vazkii/Botania
- *
+ * <p>
  * Botania is Open Source and distributed under a
  * Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License
  * (http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_GB)
- *
+ * <p>
  * File Created @ [Aug 7, 2014, 5:53:16 PM (GMT)]
  */
 package pixlepix.auracascade.lexicon.button;
@@ -22,7 +22,7 @@ public class GuiButtonLexicon extends GuiButton {
 
     @Override
     public void playPressSound(SoundHandler soundHandler) {
-    	//TODO reimplement sounds
+        //TODO reimplement sounds
         //p_146113_1_.playSound(PositionedSoundRecord.create(new ResourceLocation("aura:lexiconPage"), 1.0F));
     }
 

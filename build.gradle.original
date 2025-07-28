@@ -104,7 +104,6 @@ sourceSets {
     main {
         java {
             srcDir 'src/main/java'
-            srcDir 'src/gameanalytics'
         }
         resources {
             srcDir 'src/main/resources'

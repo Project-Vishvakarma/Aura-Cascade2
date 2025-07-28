@@ -71,7 +71,7 @@ public class ItemPrismaticWand extends Item implements ITTinkererItem {
     }
 
     @Override
-    public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand){
+    public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
         int mode = stack.getItemDamage();
         if (player.isSneaking()) {
             NBTTagCompound nbt = stack.getTagCompound();
@@ -198,7 +198,7 @@ public class ItemPrismaticWand extends Item implements ITTinkererItem {
                                         if (player.capabilities.isCreativeMode) {
                                             if (!world.isRemote) {
                                                 world.setBlockState(newPos, block.getStateFromMeta(worldDmg), 3);
-                                            }else{
+                                            } else {
                                                 particles(newPos);
                                             }
 
@@ -210,7 +210,7 @@ public class ItemPrismaticWand extends Item implements ITTinkererItem {
                                                     if (usesMetadataForPlacing) {
                                                         world.setBlockState(newPos, world.getBlockState(newPos).getBlock().getStateFromMeta(worldDmg), 3);
                                                     }
-                                                }else{
+                                                } else {
                                                     particles(newPos);
                                                 }
 

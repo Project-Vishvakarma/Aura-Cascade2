@@ -209,7 +209,6 @@ public class AuraTile extends TileEntity implements ITickable {
         }
 
 
-
         if (worldObj.getTotalWorldTime() % 20 == 1) {
             verifyConnections();
             if (burstMap != null) {
@@ -224,7 +223,7 @@ public class AuraTile extends TileEntity implements ITickable {
             markDirty();
             worldObj.markBlockRangeForRenderUpdate(pos.getX(), pos.getY(), pos.getX(), pos.getX(), pos.getY(), pos.getZ());
             worldObj.notifyBlockOfStateChange(pos, worldObj.getBlockState(pos).getBlock());
-            worldObj.markAndNotifyBlock(this.pos, this.worldObj.getChunkFromBlockCoords(this.pos),this.blockType.getDefaultState(), this.blockType.getDefaultState(), 2);
+            worldObj.markAndNotifyBlock(this.pos, this.worldObj.getChunkFromBlockCoords(this.pos), this.blockType.getDefaultState(), this.blockType.getDefaultState(), 2);
 
         }
 
@@ -262,7 +261,6 @@ public class AuraTile extends TileEntity implements ITickable {
     public double getWeight(BlockPos pos) {
         return Math.pow(20 - Math.sqrt(pos.distanceSq(getPos())), 2);
     }
-
 
 
     @Override

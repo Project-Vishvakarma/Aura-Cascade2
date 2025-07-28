@@ -50,6 +50,7 @@ public class ClientProxy extends CommonProxy {
 
 
     }
+
     @Override
     public void addToTutorial(LexiconEntry entry) {
 
@@ -95,11 +96,11 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void addEffectBypassingLimit(Particle entityFX) {
         if (Config.overrideMaxParticleLimit) {
-        	
-           Minecraft.getMinecraft().effectRenderer.fxLayers[entityFX.getFXLayer()][entityFX.particleAlpha != 1 ? 0 : 1].add(entityFX);
+
+            Minecraft.getMinecraft().effectRenderer.fxLayers[entityFX.getFXLayer()][entityFX.particleAlpha != 1 ? 0 : 1].add(entityFX);
         } else {
-        	//TODO Fix the alternative to the config.
-          //Minecraft.getMinecraft().theWorld.spawnEntityInWorld(entityFX);
+            //TODO Fix the alternative to the config.
+            //Minecraft.getMinecraft().theWorld.spawnEntityInWorld(entityFX);
         }
     }
 }

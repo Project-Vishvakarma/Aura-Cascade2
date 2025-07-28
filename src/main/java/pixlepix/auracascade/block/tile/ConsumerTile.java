@@ -54,7 +54,7 @@ public abstract class ConsumerTile extends TileEntity implements ITickable {
         return nbt;
     }
 
-	@Override
+    @Override
     public SPacketUpdateTileEntity getUpdatePacket() {
         NBTTagCompound nbt = new NBTTagCompound();
         writeCustomNBT(nbt);
@@ -115,7 +115,7 @@ public abstract class ConsumerTile extends TileEntity implements ITickable {
                 lastPower = storedPower;
                 markDirty();
             } else if (worldObj.getTotalWorldTime() % 20 == 2) {
-            	markDirty();
+                markDirty();
             }
 
             if (worldObj.getTotalWorldTime() % 500 == 0) {
@@ -138,8 +138,8 @@ public abstract class ConsumerTile extends TileEntity implements ITickable {
                     storedPower -= nextBoostCost;
                     nextBoostCost *= 2;
                     markDirty();
-                   // worldObj.notifyBlockOfStateChange(getPos(), worldObj.getBlockState(pos).getBlock());
-                    worldObj.markAndNotifyBlock(this.pos, this.worldObj.getChunkFromBlockCoords(this.pos),this.blockType.getDefaultState(), this.blockType.getDefaultState(), 2);
+                    // worldObj.notifyBlockOfStateChange(getPos(), worldObj.getBlockState(pos).getBlock());
+                    worldObj.markAndNotifyBlock(this.pos, this.worldObj.getChunkFromBlockCoords(this.pos), this.blockType.getDefaultState(), this.blockType.getDefaultState(), 2);
                 }
             }
         }

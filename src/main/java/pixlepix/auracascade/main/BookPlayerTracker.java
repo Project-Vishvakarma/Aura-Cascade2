@@ -4,7 +4,7 @@ package pixlepix.auracascade.main;
  * Created by localmacaccount on 1/16/15.
  */
 public class BookPlayerTracker {
-	//TODO Fuck the quest system
+    //TODO Fuck the quest system
     public boolean hasReceived;
     /*
     @Override

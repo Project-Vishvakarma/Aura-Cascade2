@@ -2,11 +2,11 @@
  * This class was created by <Vazkii>. It's distributed as
  * part of the Botania Mod. Get the Source Code in github:
  * https://github.com/Vazkii/Botania
- *
+ * <p>
  * Botania is Open Source and distributed under a
  * Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License
  * (http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_GB)
- *
+ * <p>
  * File Created @ [Jan 19, 2014, 4:58:19 PM (GMT)]
  */
 package pixlepix.auracascade.lexicon.page;
@@ -70,8 +70,8 @@ public class PageCraftingRecipe extends PageRecipe {
         this(unlocalizedName, Collections.singletonList(recipe));
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-	public PageCraftingRecipe(String unlocalizedName, Class clazz) {
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    public PageCraftingRecipe(String unlocalizedName, Class clazz) {
         super(unlocalizedName);
         if (Item.class.isAssignableFrom(clazz)) {
             this.recipes = Collections.singletonList(((CraftingBenchRecipe) BlockRegistry.getFirstRecipeFromItem(clazz)).iRecipe);

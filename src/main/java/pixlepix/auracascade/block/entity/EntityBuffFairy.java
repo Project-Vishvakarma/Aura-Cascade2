@@ -22,7 +22,7 @@ public class EntityBuffFairy extends EntityFairy {
                 new PotionEffect(MobEffects.ABSORPTION, 2400),
                 new PotionEffect(MobEffects.JUMP_BOOST, 2400),
                 new PotionEffect(MobEffects.SPEED, 2400),
-                };
+        };
     }
 
     @Override

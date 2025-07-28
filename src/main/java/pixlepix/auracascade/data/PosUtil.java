@@ -6,6 +6,9 @@ import net.minecraft.util.math.BlockPos;
 
 public final class PosUtil {
 
+    private PosUtil() {
+    }
+
     public static EnumFacing directionTo(BlockPos from, BlockPos to) {
         int xDiff = to.getX() - from.getX();
         int yDiff = to.getY() - from.getY();
@@ -39,6 +42,4 @@ public final class PosUtil {
     public static Iterable<BlockPos> inRange(BlockPos from, int range) {
         return BlockPos.getAllInBox(from.add(-range, -range, -range), from.add(range, range, range));
     }
-
-    private PosUtil() {}
 }

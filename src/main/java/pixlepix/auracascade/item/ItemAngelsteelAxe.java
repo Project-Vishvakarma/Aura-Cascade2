@@ -30,7 +30,7 @@ public class ItemAngelsteelAxe extends ItemAxe implements ITTinkererItem, IAngel
     public ItemAngelsteelAxe(Integer i) {
         //super(AngelsteelToolHelper.materials[i]);
         super(ToolMaterial.DIAMOND);
-    	//TODO find workaround for out of bounds exception when registering tool materials past 5
+        //TODO find workaround for out of bounds exception when registering tool materials past 5
         this.degree = i;
         setCreativeTab(null);
     }
@@ -38,6 +38,7 @@ public class ItemAngelsteelAxe extends ItemAxe implements ITTinkererItem, IAngel
     public ItemAngelsteelAxe() {
         this(0);
     }
+
     @Override
     public ArrayList<Object> getSpecialParameters() {
         return AngelsteelToolHelper.getDegreeList();

@@ -14,8 +14,8 @@ import java.util.Random;
 public class AngelsteelToolHelper {
 
     public static final int MAX_DEGREE = 11;
-    private static final String NBT_BUFF_ARRAY_NAME = "angelbuffs";
     public static final Item.ToolMaterial[] materials = new Item.ToolMaterial[MAX_DEGREE];
+    private static final String NBT_BUFF_ARRAY_NAME = "angelbuffs";
 
     static ArrayList<Object> getDegreeList() {
         ArrayList<Object> integers = new ArrayList<Object>();

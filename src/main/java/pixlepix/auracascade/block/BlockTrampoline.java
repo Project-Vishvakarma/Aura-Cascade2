@@ -24,7 +24,8 @@ import java.util.ArrayList;
  * Created by localmacaccount on 2/5/15.
  */
 public class BlockTrampoline extends Block implements ITTinkererBlock {
-	private static final AxisAlignedBB AABB = new AxisAlignedBB(0F, 0F, 0F, 1F, .8F, 1F);
+    private static final AxisAlignedBB AABB = new AxisAlignedBB(0F, 0F, 0F, 1F, .8F, 1F);
+
     public BlockTrampoline() {
         super(Material.CLOTH);
         setLightLevel(1F);
@@ -81,8 +82,9 @@ public class BlockTrampoline extends Block implements ITTinkererBlock {
     public int getCreativeTabPriority() {
         return -50;
     }
+
     @Override
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos) {
-		return AABB;
-	}
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos) {
+        return AABB;
+    }
 }

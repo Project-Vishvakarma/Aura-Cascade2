@@ -46,7 +46,7 @@ public class ItemFairyRing extends Item implements ITTinkererItem, IBauble {
             int[] tagList = ringStack.getTagCompound().getIntArray("fairyList");
             for (int i : tagList) {
                 @SuppressWarnings("unchecked")
-				Class<? extends EntityFairy> fairyClass = ItemFairyCharm.fairyClasses[i];
+                Class<? extends EntityFairy> fairyClass = ItemFairyCharm.fairyClasses[i];
                 EntityFairy fairy;
                 try {
                     fairy = fairyClass.getConstructor(World.class).newInstance(((EntityPlayer) entity).worldObj);
@@ -147,13 +147,13 @@ public class ItemFairyRing extends Item implements ITTinkererItem, IBauble {
         list.add(tagList.length + "/15");
         for (int i : tagList) {
             @SuppressWarnings("unchecked")
-			Class<? extends EntityFairy> fairyClass = ItemFairyCharm.fairyClasses[i];
+            Class<? extends EntityFairy> fairyClass = ItemFairyCharm.fairyClasses[i];
             list.add(ItemFairyCharm.getNameFromFairy(fairyClass));
         }
     }
 
     @Override
-    public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand){
+    public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World world, EntityPlayer player, EnumHand hand) {
         if (stack.getTagCompound() == null) {
             stack.setTagCompound(new NBTTagCompound());
         }

@@ -69,17 +69,17 @@ public class PacketBurst implements IMessage, IMessageHandler<PacketBurst, IMess
             public void run() {
                 if (msg.world.isRemote) {
                     if (msg.type == 0) {
-                            Vec3d velocity = new Vec3d(msg.to.subtract(msg.from));
-                            velocity = velocity.normalize();
-                            double dist = Math.sqrt(msg.to.distanceSq(msg.from));
+                        Vec3d velocity = new Vec3d(msg.to.subtract(msg.from));
+                        velocity = velocity.normalize();
+                        double dist = Math.sqrt(msg.to.distanceSq(msg.from));
 
-                            int density = (int) (5D);
-                            for (int count = 0; count < dist * density; count++) {
-                                double i = ((double) count) / density;
-                                double xp = msg.from.getX() + (velocity.xCoord * i) + .5;
-                                double yp = msg.from.getY() + (velocity.yCoord * i) + .5;
-                                double zp = msg.from.getZ() + (velocity.zCoord * i) + .5;
-                                ParticleEffects.spawnParticle(msg.particle, xp, yp, zp, velocity.xCoord * .1, .15, velocity.zCoord * .1, msg.r, msg.g, msg.b);
+                        int density = (int) (5D);
+                        for (int count = 0; count < dist * density; count++) {
+                            double i = ((double) count) / density;
+                            double xp = msg.from.getX() + (velocity.xCoord * i) + .5;
+                            double yp = msg.from.getY() + (velocity.yCoord * i) + .5;
+                            double zp = msg.from.getZ() + (velocity.zCoord * i) + .5;
+                            ParticleEffects.spawnParticle(msg.particle, xp, yp, zp, velocity.xCoord * .1, .15, velocity.zCoord * .1, msg.r, msg.g, msg.b);
 
 
                         }

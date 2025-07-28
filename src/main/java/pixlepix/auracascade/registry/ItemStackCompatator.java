@@ -16,7 +16,6 @@ public class ItemStackCompatator implements Comparator<ItemStack> {
     public int compare(ItemStack o1, ItemStack o2) {
 
 
-
         Object itemObj1 = o1.getItem();
         Object itemObj2 = o2.getItem();
 
@@ -31,7 +30,7 @@ public class ItemStackCompatator implements Comparator<ItemStack> {
             if (comp != 0) {
                 return comp;
             }
-        }else{
+        } else {
             System.out.println("A non-comparable item snuck into the creative tab");
         }
 

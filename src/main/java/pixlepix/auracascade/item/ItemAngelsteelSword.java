@@ -48,7 +48,13 @@ public class ItemAngelsteelSword extends ItemSword implements ITTinkererItem, IA
         return ((ItemAngelsteelSword) BlockRegistry.getFirstItemFromClass(ItemAngelsteelSword.class)).getStack(aura);
     }
 
+    public static EnumRainbowColor getAura(ItemStack stack) {
+        if (stack.getTagCompound() != null && stack.getTagCompound().hasKey("color")) {
+            return EnumRainbowColor.values()[stack.getTagCompound().getInteger("color")];
 
+        }
+        return EnumRainbowColor.RED;
+    }
 
     @Override
     public int getCreativeTabPriority() {
@@ -58,14 +64,6 @@ public class ItemAngelsteelSword extends ItemSword implements ITTinkererItem, IA
     @Override
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, IBlockState state, BlockPos pos, EntityLivingBase entityLiving) {
         return true;
-    }
-
-    public static EnumRainbowColor getAura(ItemStack stack) {
-        if (stack.getTagCompound() != null && stack.getTagCompound().hasKey("color")) {
-            return EnumRainbowColor.values()[stack.getTagCompound().getInteger("color")];
-
-        }
-        return EnumRainbowColor.RED;
     }
 
     public ItemStack getStack(EnumRainbowColor aura) {

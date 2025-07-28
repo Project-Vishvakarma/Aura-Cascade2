@@ -23,8 +23,9 @@ import java.util.Random;
  */
 public class FairyTorch extends Block implements ITTinkererBlock {
 
-    public final String name = "fairyTorch";
     private static final AxisAlignedBB AABB = new AxisAlignedBB(0, 0, 0, 0, 0, 0);
+    public final String name = "fairyTorch";
+
     public FairyTorch() {
         super(Material.GLASS);
         setTickRandomly(true);
@@ -108,8 +109,9 @@ public class FairyTorch extends Block implements ITTinkererBlock {
     public int getCreativeTabPriority() {
         return 0;
     }
+
     @Override
-   	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos) {
-   		return AABB;
-   	}
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos) {
+        return AABB;
+    }
 }

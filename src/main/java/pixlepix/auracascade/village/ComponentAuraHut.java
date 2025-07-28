@@ -32,6 +32,7 @@ public class ComponentAuraHut extends StructureVillagePieces.WoodHut {
         StructureBoundingBox structureboundingbox = StructureBoundingBox.getComponentToAddBoundingBox(p1, p2, p3, 0, 0, 0, 7, 6, 7, p4);
         return canVillageGoDeeper(structureboundingbox) && StructureComponent.findIntersecting(pieces, structureboundingbox) == null ? new ComponentAuraHut(villagePiece, p5, random, structureboundingbox, p4) : null;
     }
+
     @Override
     public boolean addComponentParts(World worldIn, Random random, StructureBoundingBox structureBoundingBox) {
         if (this.averageGroundLvl < 0) {
@@ -78,7 +79,7 @@ public class ComponentAuraHut extends StructureVillagePieces.WoodHut {
         this.func_189927_a(worldIn, structureBoundingBox, random, 1, 1, 0, EnumFacing.SOUTH);
 
         if (this.getBlockStateFromPos(worldIn, 2, 0, -1, structureBoundingBox).getMaterial() == Material.AIR && this.getBlockStateFromPos(worldIn, 2, -1, -1, structureBoundingBox).getMaterial() != Material.AIR) {
-        	this.setBlockState(worldIn, Blocks.STONE_STAIRS.getStateFromMeta(3), 1, 0, -1, structureBoundingBox);
+            this.setBlockState(worldIn, Blocks.STONE_STAIRS.getStateFromMeta(3), 1, 0, -1, structureBoundingBox);
         }
 
         for (int i = 0; i < 5; ++i) {

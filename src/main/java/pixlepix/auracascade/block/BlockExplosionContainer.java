@@ -33,8 +33,8 @@ import java.util.Random;
  */
 public class BlockExplosionContainer extends Block implements ITTinkererBlock {
 
-    public String type;
     public static final PropertyInteger DAMAGE = PropertyInteger.create("damage", 0, 15);
+    public String type;
 
     public BlockExplosionContainer() {
         super(Material.ROCK);
@@ -44,21 +44,6 @@ public class BlockExplosionContainer extends Block implements ITTinkererBlock {
         setTickRandomly(true);
         setHardness(2F);
         setDefaultState(blockState.getBaseState().withProperty(DAMAGE, 0));
-    }
-
-    @Override
-    public BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, DAMAGE);
-    }
-
-    @Override
-    public int getMetaFromState(IBlockState state) {
-        return state.getValue(DAMAGE);
-    }
-
-    @Override
-    public IBlockState getStateFromMeta(int meta) {
-        return getDefaultState().withProperty(DAMAGE, meta);
     }
 
     public BlockExplosionContainer(String s) {
@@ -82,6 +67,21 @@ public class BlockExplosionContainer extends Block implements ITTinkererBlock {
 
     public static PageCraftingRecipe getRecipe(String unloc, String name) {
         return new PageCraftingRecipe(unloc, BlockRegistry.getRecipe(getBlockFromName(name)));
+    }
+
+    @Override
+    public BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, DAMAGE);
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        return state.getValue(DAMAGE);
+    }
+
+    @Override
+    public IBlockState getStateFromMeta(int meta) {
+        return getDefaultState().withProperty(DAMAGE, meta);
     }
 
     @Override

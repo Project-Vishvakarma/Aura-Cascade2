@@ -113,7 +113,7 @@ public class CommonProxy {
         registry.postInit();
         LexiconData.init();
         //chiselBookshelf = GameRegistry.findBlock("chisel", "chisel.blockBookshelf");
-       // chiselBookshelf = ForgeRegistries.BLOCKS.getValue(key)
+        // chiselBookshelf = ForgeRegistries.BLOCKS.getValue(key)
         if (Loader.isModLoaded("Thaumcraft")) {
             TCCompat.postInit();
         }
@@ -124,6 +124,7 @@ public class CommonProxy {
         }
         OreDropManager.init();
     }
+
     public void setLexiconStack(ItemStack stack) {
     }
 

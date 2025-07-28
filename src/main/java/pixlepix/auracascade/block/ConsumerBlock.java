@@ -57,6 +57,16 @@ public class ConsumerBlock extends Block implements IToolTip, ITTinkererBlock, I
         setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.SOUTH));
     }
 
+    public static ConsumerBlock getBlockFromName(String name) {
+        List<Block> blockList = BlockRegistry.getBlockFromClass(ConsumerBlock.class);
+        for (Block b : blockList) {
+            if (((ConsumerBlock) b).name != null && ((ConsumerBlock) b).name.equals(name)) {
+                return (ConsumerBlock) b;
+            }
+        }
+        return null;
+    }
+
     @Override
     public BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, FACING);
@@ -75,21 +85,12 @@ public class ConsumerBlock extends Block implements IToolTip, ITTinkererBlock, I
         return getDefaultState().withProperty(FACING, EnumFacing.getFront(meta));
     }
 
-    public static ConsumerBlock getBlockFromName(String name) {
-        List<Block> blockList = BlockRegistry.getBlockFromClass(ConsumerBlock.class);
-        for (Block b : blockList) {
-            if (((ConsumerBlock) b).name != null && ((ConsumerBlock) b).name.equals(name)) {
-                return (ConsumerBlock) b;
-            }
-        }
-        return null;
-    }
-
     @Override
     public void onBlockPlacedBy(World w, BlockPos pos, IBlockState state, EntityLivingBase livingBase, ItemStack stack) {
         w.setBlockState(pos, state.withProperty(FACING, livingBase.getHorizontalFacing().getOpposite()));
         AuraUtil.updateMonitor(w, pos);
     }
+
     @Override
     public void breakBlock(World w, BlockPos pos, IBlockState state) {
         super.breakBlock(w, pos, state);
@@ -153,8 +154,8 @@ public class ConsumerBlock extends Block implements IToolTip, ITTinkererBlock, I
         return 0;
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes"})
-	@Override
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    @Override
     public ArrayList<Object> getSpecialParameters() {
         ArrayList result = new ArrayList<Object>();
         result.add("plant");
@@ -235,7 +236,7 @@ public class ConsumerBlock extends Block implements IToolTip, ITTinkererBlock, I
             }
             if (name.equals("fish")) {
                 return FisherTile.class;
-                
+
             }
         }
         return FurnaceTile.class;
@@ -247,7 +248,7 @@ public class ConsumerBlock extends Block implements IToolTip, ITTinkererBlock, I
     }
 
     @Override
-    public int getComparatorInputOverride(IBlockState state, World world, BlockPos pos ) {
+    public int getComparatorInputOverride(IBlockState state, World world, BlockPos pos) {
         TileEntity tileEntity = world.getTileEntity(pos);
         if (tileEntity instanceof ConsumerTile) {
             return (int) (15D * (((double) ((ConsumerTile) tileEntity).progress) / ((double) ((ConsumerTile) tileEntity).getMaxProgress())));

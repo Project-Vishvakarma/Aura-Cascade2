@@ -49,10 +49,10 @@ public class EnchantEventHandler {
     Block[] ores = new Block[]{Blocks.REDSTONE_ORE, Blocks.LAPIS_ORE, Blocks.IRON_ORE, Blocks.GOLD_ORE, Blocks.COAL_ORE, Blocks.DIAMOND_ORE, Blocks.EMERALD_ORE, Blocks.LIT_REDSTONE_ORE, Blocks.QUARTZ_ORE};
 
     public static void init() {
-    	//TODO FIX THESE. FUCK REFLECTION
-     //   dropCommon = ReflectionHelper.findMethod(EntityLivingBase.class, null, new String[]{"func_70628_a", "dropFewItems"}, boolean.class, int.class);
+        //TODO FIX THESE. FUCK REFLECTION
+        //   dropCommon = ReflectionHelper.findMethod(EntityLivingBase.class, null, new String[]{"func_70628_a", "dropFewItems"}, boolean.class, int.class);
         //dropRare = ReflectionHelper.findMethod(EntityLivingBase.class, null, new String[]{"func_82164_bB", "addRandomDrop"});
-        
+
     }
 
     public static ItemStack getDoubleResult(ItemStack stack) {
@@ -366,13 +366,11 @@ public class EnchantEventHandler {
     }
 
     //Copied from Block
-    public ItemStack createStackedBlock(IBlockState state)
-    {
+    public ItemStack createStackedBlock(IBlockState state) {
         int i = 0;
         Item item = Item.getItemFromBlock(state.getBlock());
 
-        if (item != null && item.getHasSubtypes())
-        {
+        if (item != null && item.getHasSubtypes()) {
             i = state.getBlock().getMetaFromState(state);
         }
 

@@ -20,7 +20,7 @@ public class ParticleEffects {
     public static void spawnParticle(String particleName, double posX, double posY, double posZ, double motX, double motY, double motZ) {
         spawnParticle(particleName, posX, posY, posZ, motX, motY, motZ, 0, 0, 0);
     }
-    
+
     public static void spawnParticle(String particleName, double posX, double posY, double posZ, double motX, double motY, double motZ, double r, double g, double b) {
 
         if (minecraft != null && minecraft.getRenderViewEntity() != null && minecraft.effectRenderer != null) {

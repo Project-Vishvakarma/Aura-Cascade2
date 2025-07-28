@@ -14,7 +14,8 @@ public enum EnumRainbowColor {
     ORANGE("Orange", 1, .5, 0, EnumColor.ORANGE, new int[]{1}),
     YELLOW("Yellow", 1, 1, .1, EnumColor.YELLOW, new int[]{4}),
     BLUE("Blue", .1, .1, 1, EnumColor.DARK_BLUE, new int[]{3, 9, 11}),
-    VIOLET("Violet", 1, .1, 1, EnumColor.PURPLE, new int[]{2, 6, 10}), ;
+    VIOLET("Violet", 1, .1, 1, EnumColor.PURPLE, new int[]{2, 6, 10}),
+    ;
 
     public String name;
     public double r;

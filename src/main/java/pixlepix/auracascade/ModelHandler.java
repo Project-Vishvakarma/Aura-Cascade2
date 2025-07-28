@@ -18,8 +18,11 @@ import java.util.Set;
 
 public final class ModelHandler {
 
+    private ModelHandler() {
+    }
+
     // I know this is very hardcoded right now, but it's the fastest to get up and running
-    public static void registerModels(){
+    public static void registerModels() {
         registerAngelSteelIngots();
         registerAngelSteelTools();
         registerFairyCharms();
@@ -115,20 +118,27 @@ public final class ModelHandler {
         }
 
         for (Item i : BlockRegistry.getItemFromClass(ItemAngelsteelSword.class)) {
-            ModelLoader.registerItemVariants(i, new ResourceLocation("aura:angel_sword"), new ResourceLocation(("aura:angel_sword")),  new ResourceLocation("aura:angel_swordGreen"),  new ResourceLocation("aura:angel_swordOrange")
+            ModelLoader.registerItemVariants(i, new ResourceLocation("aura:angel_sword"), new ResourceLocation(("aura:angel_sword")), new ResourceLocation("aura:angel_swordGreen"), new ResourceLocation("aura:angel_swordOrange")
                     , new ResourceLocation("aura:angel_swordRed"), new ResourceLocation("aura:angel_swordViolet"), new ResourceLocation("aura:angel_swordYellow"), new ResourceLocation("aura:angel_swordBlue"));
             ModelLoader.setCustomMeshDefinition(i, new ItemMeshDefinition() {
                 @Override
                 public ModelResourceLocation getModelLocation(ItemStack stack) {
                     switch (ItemAngelsteelSword.getAura(stack)) {
-                        case WHITE: return new ModelResourceLocation("aura:angel_sword", "inventory");
-                        case GREEN: return new ModelResourceLocation("aura:angel_swordGreen", "inventory");
-                        case ORANGE: return new ModelResourceLocation("aura:angel_swordOrange", "inventory");
-                        case YELLOW: return new ModelResourceLocation("aura:angel_swordYellow", "inventory");
-                        case BLUE: return new ModelResourceLocation("aura:angel_swordBlue", "inventory");
-                        case VIOLET: return new ModelResourceLocation("aura:angel_swordViolet", "inventory");
+                        case WHITE:
+                            return new ModelResourceLocation("aura:angel_sword", "inventory");
+                        case GREEN:
+                            return new ModelResourceLocation("aura:angel_swordGreen", "inventory");
+                        case ORANGE:
+                            return new ModelResourceLocation("aura:angel_swordOrange", "inventory");
+                        case YELLOW:
+                            return new ModelResourceLocation("aura:angel_swordYellow", "inventory");
+                        case BLUE:
+                            return new ModelResourceLocation("aura:angel_swordBlue", "inventory");
+                        case VIOLET:
+                            return new ModelResourceLocation("aura:angel_swordViolet", "inventory");
                         case RED:
-                        default: return new ModelResourceLocation("aura:angel_swordRed", "inventory");
+                        default:
+                            return new ModelResourceLocation("aura:angel_swordRed", "inventory");
                     }
                 }
             });
@@ -176,6 +186,4 @@ public final class ModelHandler {
 
         ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(l, "inventory"));
     }
-
-    private ModelHandler() {}
 }

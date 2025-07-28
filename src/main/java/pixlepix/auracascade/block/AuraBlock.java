@@ -44,11 +44,12 @@ import java.util.List;
 public class AuraBlock extends Block implements IToolTip, ITTinkererBlock, ITileEntityProvider {
 
     public static String name = "auraNode";
+    private static AxisAlignedBB AABB = new AxisAlignedBB(.25F, .25F, .25F, .75F, .75F, .75F);
     //"" is default
     //"pump" is AuraTilePump\
     //"black" is AuraTileBlack etc
     private String type;
-    private static AxisAlignedBB AABB = new AxisAlignedBB(.25F, .25F, .25F, .75F, .75F, .75F);
+
     public AuraBlock(String type) {
         super(Material.GLASS);
         this.type = type;
@@ -60,6 +61,7 @@ public class AuraBlock extends Block implements IToolTip, ITTinkererBlock, ITile
         this("");
         setHardness(2F);
     }
+
     public static AuraBlock getBlockFromName(String name) {
         List<Block> blockList = BlockRegistry.getBlockFromClass(AuraBlock.class);
         if ("capacitor".equals(name)) {
@@ -105,30 +107,32 @@ public class AuraBlock extends Block implements IToolTip, ITTinkererBlock, ITile
     public String getHarvestTool(IBlockState state) {
         return "pickaxe";
     }
+
     @Override
-    public boolean isVisuallyOpaque()
-    {
+    public boolean isVisuallyOpaque() {
         return false;
     }
+
     @Override
-    public boolean isBlockNormalCube(IBlockState state)
-    {
+    public boolean isBlockNormalCube(IBlockState state) {
         return false;
     }
+
     @Override
-    public boolean isOpaqueCube(IBlockState state)
-    {
+    public boolean isOpaqueCube(IBlockState state) {
         return false;
     }
+
     @Override
-    public boolean isCollidable()
-    {
+    public boolean isCollidable() {
         return true;
     }
+
     @Override
     public boolean hasComparatorInputOverride(IBlockState state) {
         return true;
     }
+
     @Override
     public int getComparatorInputOverride(IBlockState blockState, World worldIn, BlockPos pos) {
         TileEntity tileEntity = worldIn.getTileEntity(pos);
@@ -196,6 +200,7 @@ public class AuraBlock extends Block implements IToolTip, ITTinkererBlock, ITile
         }
         return true;
     }
+
     @Override
     public void onEntityCollidedWithBlock(World world, BlockPos pos, IBlockState blockState, Entity entity) {
         super.onEntityCollidedWithBlock(world, pos, this.getDefaultState(), entity);
@@ -506,6 +511,7 @@ public class AuraBlock extends Block implements IToolTip, ITTinkererBlock, ITile
         }
         return result;
     }
+
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos) {
         return AABB;

@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
  * Created by localmacaccount on 5/31/15.
  */
 public class Quest {
-	//TODO QUEST
+    //TODO QUEST
     public static int nextId;
     public final ItemStack target;
     public final ItemStack result;
@@ -22,16 +22,17 @@ public class Quest {
         nextId++;
 
     }
+
     public boolean hasCompleted(EntityPlayer player) {
-      //  QuestData questData = (QuestData) player.getExtendedProperties(QuestData.EXT_PROP_NAME);
-       // return questData.completedQuests.contains(this);
+        //  QuestData questData = (QuestData) player.getExtendedProperties(QuestData.EXT_PROP_NAME);
+        // return questData.completedQuests.contains(this);
         return false;
     }
 
     public void complete(EntityPlayer player) {
         //QuestData questData = (QuestData) player.getExtendedProperties(QuestData.EXT_PROP_NAME);
-       // questData.completedQuests.add(this);
+        // questData.completedQuests.add(this);
 
-       // AuraCascade.analytics.eventDesign("questComplete", id);
+        // AuraCascade.analytics.eventDesign("questComplete", id);
     }
 }
