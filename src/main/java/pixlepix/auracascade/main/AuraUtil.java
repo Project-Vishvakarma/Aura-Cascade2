@@ -89,7 +89,7 @@ public class AuraUtil {
         return entity.posX + "|" + entity.posY + "|" + entity.posZ;
 
     }
-    
+
 
     public static void updateMonitor(World w, int x, int y, int z) {
         for (ForgeDirection d1 : ForgeDirection.VALID_DIRECTIONS) {

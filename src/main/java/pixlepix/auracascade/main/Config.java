@@ -47,8 +47,6 @@ public class Config {
 
     public static float powerFactor = .75F;
 
-    public static boolean analytics = true;
-
 
     static Configuration config;
 
@@ -56,7 +54,6 @@ public class Config {
         config = new Configuration(event.getSuggestedConfigurationFile());
         config.load();
 
-        config.getBoolean("analytics", Configuration.CATEGORY_GENERAL, true, "Sends anonymous reports on usage. Automatically disaled if snooper settings are disabled");
         pumpCoalSpeed = config.getInt("pumpBurningSpeed", Configuration.CATEGORY_GENERAL, pumpCoalSpeed, 1, Integer.MAX_VALUE, "");
         pumpCoalDuration = config.getInt("pumpBurningDuration", Configuration.CATEGORY_GENERAL, pumpCoalDuration, 1, Integer.MAX_VALUE, "");
 

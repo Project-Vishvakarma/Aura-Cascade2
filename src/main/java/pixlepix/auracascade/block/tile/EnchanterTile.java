@@ -104,6 +104,7 @@ public class EnchanterTile extends ConsumerTile {
                 , EnchantmentHelper.getEnchantmentLevel(EnchantmentManager.blue.effectId, stack)
                 , EnchantmentHelper.getEnchantmentLevel(EnchantmentManager.purple.effectId, stack)});
     }
+
     public double getSuccessRate(ItemStack stack) {
         int totalLevel = getTotalLevel(stack);
         return Math.pow(.75, totalLevel) * Math.pow(.25, Math.max(0, getMaxLevel(stack) - 4));

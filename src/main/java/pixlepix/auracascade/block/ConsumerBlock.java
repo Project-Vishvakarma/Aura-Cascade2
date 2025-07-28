@@ -85,6 +85,7 @@ public class ConsumerBlock extends Block implements IToolTip, ITTinkererBlock, I
 
         AuraUtil.updateMonitor(w, x, y, z);
     }
+
     @Override
     public void breakBlock(World w, int x, int y, int z, Block b, int p_149749_6_) {
         super.breakBlock(w, x, y, z, b, p_149749_6_);
@@ -310,7 +311,7 @@ public class ConsumerBlock extends Block implements IToolTip, ITTinkererBlock, I
             }
             if (name.equals("fish")) {
                 return FisherTile.class;
-                
+
             }
         }
         return FurnaceTile.class;

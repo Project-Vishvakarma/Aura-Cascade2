@@ -12,7 +12,7 @@ public class ParticleBeam extends EntityFX {
         this(par1World, x, y, z, red, blue, green);
         this.particleMaxAge *= 5;
     }
-    
+
     public ParticleBeam(World par1World, double x, double y, double z, float red, float blue, float green) {
         super(par1World, x, y, z, 0.0D, 0.0D, 0.0D);
         this.motionX *= 0.10000000149011612D;

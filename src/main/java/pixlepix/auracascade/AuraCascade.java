@@ -20,7 +20,7 @@ import pixlepix.auracascade.main.ConstantMod;
 public class AuraCascade {
 
     public static SimpleAnalytics analytics;
-    
+
     @Instance(ConstantMod.modId)
     public static AuraCascade instance;
 

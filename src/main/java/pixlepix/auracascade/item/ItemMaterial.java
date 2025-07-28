@@ -61,7 +61,7 @@ public class ItemMaterial extends Item implements ITTinkererItem {
 
     public static ItemStack getPrism() {
         return getPrism(1);
-        
+
     }
 
     public static ItemStack getPrism(int size) {
